@@ -3,7 +3,10 @@
 	"type": "module",
 	"scripts": {
 		"build:dev": "dotenv -v DEV=true -- tsx ganban/ganban.ts",
-		"build:dev:watch": "dotenv -v DEV=true -v WATCH=true -- tsx ganban/ganban.ts"
+		"build:dev:watch": "dotenv -v DEV=true -v WATCH=true -- tsx ganban/ganban.ts",
+		"lint": "tsc",
+		"clean": "shx rm -rf build",
+		"format": "prettier --write ."
 	},
 	"dependencies": {
 		"@minecraft/server": "2.2.0",
