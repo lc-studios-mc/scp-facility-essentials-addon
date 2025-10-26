@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@minecraft/server':
+        specifier: 2.2.0
+        version: 2.2.0(@minecraft/common@1.2.0)(@minecraft/vanilla-data@1.21.114)
+      '@minecraft/server-ui':
+        specifier: 2.0.0
+        version: 2.0.0(@minecraft/vanilla-data@1.21.114)
     devDependencies:
       '@types/node':
         specifier: ^22.18.12
@@ -199,6 +206,21 @@ packages:
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
+
+  '@minecraft/common@1.2.0':
+    resolution: {integrity: sha512-JdmEq4P3Z/FtoBzhLijFgMSVFnFRrUoLwY8DHHrgtFo0mfLTOLTB1RErYjLMsA6b7BGVNxkX/pfFRiH7QZ0XwQ==}
+
+  '@minecraft/server-ui@2.0.0':
+    resolution: {integrity: sha512-K1xFK1OEJSNfIgyRElaoxDTW/nbEqjBp1YnUdyPCs4kGDglwoXNyFz3wzMOkvT04CJXSifZGcTJeWda4C6OkXw==}
+
+  '@minecraft/server@2.2.0':
+    resolution: {integrity: sha512-Tn+Sr7IK71LptVOumTSWWXpjYgCqgCCwB8BosnU1fUltJV3JsNTnRtQMHlzQwSDGwTF0P0HJFhDALoOMlG/j2Q==}
+    peerDependencies:
+      '@minecraft/common': ^1.2.0
+      '@minecraft/vanilla-data': '>=1.20.70'
+
+  '@minecraft/vanilla-data@1.21.114':
+    resolution: {integrity: sha512-FQiJ0YHIK/bGJvyndnXb/Mv6Bfiu4KNeh0jcX3E7SqPfgdlFgkERaw9ptMsiBo3PJXOdkLMLMNXqfqL6xEGHUw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -849,6 +871,22 @@ snapshots:
       strip-ansi-cjs: strip-ansi@6.0.1
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
+
+  '@minecraft/common@1.2.0': {}
+
+  '@minecraft/server-ui@2.0.0(@minecraft/vanilla-data@1.21.114)':
+    dependencies:
+      '@minecraft/common': 1.2.0
+      '@minecraft/server': 2.2.0(@minecraft/common@1.2.0)(@minecraft/vanilla-data@1.21.114)
+    transitivePeerDependencies:
+      - '@minecraft/vanilla-data'
+
+  '@minecraft/server@2.2.0(@minecraft/common@1.2.0)(@minecraft/vanilla-data@1.21.114)':
+    dependencies:
+      '@minecraft/common': 1.2.0
+      '@minecraft/vanilla-data': 1.21.114
+
+  '@minecraft/vanilla-data@1.21.114': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
