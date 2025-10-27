@@ -141,6 +141,10 @@
 					},
 				],
 			},
+			"tag:metal": {},
+			"minecraft:is_pickaxe_item_destructible": {},
+			"tag:scpfe:door": {},
+			"tag:scpfe:sliding_door": {},
 		},
 		permutations: [
 			{
