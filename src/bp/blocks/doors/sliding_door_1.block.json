@@ -87,8 +87,12 @@
 				]
 			},
 			"minecraft:redstone_conductivity": {
-				"redstone_conductor": true,
-				"allows_wire_to_step_down": false
+				"redstone_conductor": true
+			},
+			"minecraft:tick": {
+				// If ticks are not scheduled by default, block updates may not work properly.
+				"interval_range": [2000, 3000],
+				"looping": true
 			},
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 24.0
@@ -158,6 +162,14 @@
 				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
 				"components": {
 					"minecraft:transformation": { "rotation": [0, 270, 0] }
+				}
+			},
+			{
+				// The top part shouldn't drop any loot because when it's destroyed,
+				// the bottom part, which drops loot, is also destroyed.
+				"condition": "!q.block_state('lc:is_bottom_part')",
+				"components": {
+					"minecraft:loot": "loot_tables/empty.json"
 				}
 			},
 			{
