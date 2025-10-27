@@ -21,6 +21,8 @@
 			},
 		},
 		components: {
+			"scpfe:sliding_door": {},
+			"scpfe:door_placement": {},
 			"minecraft:geometry": {
 				identifier: "geometry.scpfe.sliding_door",
 				bone_visibility: {
