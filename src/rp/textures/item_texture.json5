@@ -1,0 +1,6 @@
+{
+	resource_pack_name: "scp-facility-essentials-rp",
+	texture_name: "atlas.items",
+	texture_data: {
+	},
+}
