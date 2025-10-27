@@ -1,203 +1,203 @@
 {
-	"format_version": "1.21.110",
+	format_version: "1.21.110",
 	"minecraft:block": {
-		"description": {
-			"identifier": "scpfe:sliding_door_1",
-			"menu_category": {
-				"category": "construction"
+		description: {
+			identifier: "scpfe:sliding_door_1",
+			menu_category: {
+				category: "construction",
 			},
-			"states": {
+			states: {
 				"scpfe:door_action": ["close", "open"],
 				"scpfe:check_redstone": [false, true],
 				"scpfe:is_bottom_part": [true, false],
 				"scpfe:step_major": [0, 1, 2, 3],
-				"scpfe:step_minor": [0, 1, 2, 3]
+				"scpfe:step_minor": [0, 1, 2, 3],
 			},
-			"traits": {
+			traits: {
 				"minecraft:placement_direction": {
-					"enabled_states": ["minecraft:cardinal_direction"],
-					"y_rotation_offset": 180
-				}
-			}
+					enabled_states: ["minecraft:cardinal_direction"],
+					y_rotation_offset: 180,
+				},
+			},
 		},
-		"components": {
+		components: {
 			"minecraft:geometry": {
-				"identifier": "geometry.scpfe.sliding_door",
-				"bone_visibility": {
-					"bottom_step_0": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 0",
-					"bottom_step_1": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 1",
-					"bottom_step_2": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 2",
-					"bottom_step_3": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 3",
-					"bottom_step_4": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 0",
-					"bottom_step_5": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 1",
-					"bottom_step_6": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 2",
-					"bottom_step_7": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 3",
-					"bottom_step_8": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 0",
-					"bottom_step_9": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 1",
-					"bottom_step_10": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 2",
-					"bottom_step_11": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 3",
-					"bottom_step_12": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 0",
-					"bottom_step_13": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 1",
-					"bottom_step_14": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 2",
-					"bottom_step_15": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 3",
-					"top_step_0": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 0",
-					"top_step_1": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 1",
-					"top_step_2": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 2",
-					"top_step_3": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 3",
-					"top_step_4": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 0",
-					"top_step_5": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 1",
-					"top_step_6": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 2",
-					"top_step_7": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 3",
-					"top_step_8": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 0",
-					"top_step_9": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 1",
-					"top_step_10": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 2",
-					"top_step_11": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 3",
-					"top_step_12": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 0",
-					"top_step_13": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 1",
-					"top_step_14": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 2",
-					"top_step_15": "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 3"
-				}
+				identifier: "geometry.scpfe.sliding_door",
+				bone_visibility: {
+					bottom_step_0: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 0",
+					bottom_step_1: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 1",
+					bottom_step_2: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 2",
+					bottom_step_3: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 3",
+					bottom_step_4: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 0",
+					bottom_step_5: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 1",
+					bottom_step_6: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 2",
+					bottom_step_7: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 3",
+					bottom_step_8: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 0",
+					bottom_step_9: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 1",
+					bottom_step_10: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 2",
+					bottom_step_11: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 3",
+					bottom_step_12: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 0",
+					bottom_step_13: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 1",
+					bottom_step_14: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 2",
+					bottom_step_15: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 3",
+					top_step_0: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 0",
+					top_step_1: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 1",
+					top_step_2: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 2",
+					top_step_3: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 3",
+					top_step_4: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 0",
+					top_step_5: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 1",
+					top_step_6: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 2",
+					top_step_7: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 3",
+					top_step_8: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 0",
+					top_step_9: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 1",
+					top_step_10: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 2",
+					top_step_11: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 3",
+					top_step_12: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 0",
+					top_step_13: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 1",
+					top_step_14: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 2",
+					top_step_15: "!q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 3",
+				},
 			},
 			"minecraft:material_instances": {
 				"*": {
-					"texture": "scpfe:sliding_door_1",
-					"render_method": "opaque",
-					"ambient_occlusion": 0.5
-				}
+					texture: "scpfe:sliding_door_1",
+					render_method: "opaque",
+					ambient_occlusion: 0.5,
+				},
 			},
 			"minecraft:item_visual": {
-				"geometry": "geometry.scpfe.sliding_door.item",
-				"material_instances": {
+				geometry: "geometry.scpfe.sliding_door.item",
+				material_instances: {
 					"*": {
-						"texture": "scpfe:sliding_door_1",
-						"face_dimming": false
-					}
-				}
+						texture: "scpfe:sliding_door_1",
+						face_dimming: false,
+					},
+				},
 			},
 			"minecraft:display_name": "scpfe:sliding_door_1",
 			"minecraft:movable": {
-				"movement_type": "immovable"
+				movement_type: "immovable",
 			},
 			"minecraft:liquid_detection": {
-				"detection_rules": [
+				detection_rules: [
 					{
-						"liquid_type": "water",
-						"can_contain_liquid": true,
-						"on_liquid_touches": "blocking"
-					}
-				]
+						liquid_type: "water",
+						can_contain_liquid: true,
+						on_liquid_touches: "blocking",
+					},
+				],
 			},
 			"minecraft:redstone_conductivity": {
-				"redstone_conductor": true
+				redstone_conductor: true,
 			},
 			"minecraft:tick": {
 				// If ticks are not scheduled by default, block updates may not work properly.
-				"interval_range": [2000, 3000],
-				"looping": true
+				interval_range: [2000, 3000],
+				looping: true,
 			},
 			"minecraft:destructible_by_explosion": {
-				"explosion_resistance": 24.0
+				explosion_resistance: 24.0,
 			},
 			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 15,
-				"item_specific_speeds": [
+				seconds_to_destroy: 15,
+				item_specific_speeds: [
 					{
-						"item": {
-							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						item: {
+							tags: "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')",
 						},
-						"destroy_speed": 0.9
+						destroy_speed: 0.9,
 					},
 					{
-						"item": {
-							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						item: {
+							tags: "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')",
 						},
-						"destroy_speed": 0.8
+						destroy_speed: 0.8,
 					},
 					{
-						"item": {
-							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						item: {
+							tags: "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')",
 						},
-						"destroy_speed": 0.7
+						destroy_speed: 0.7,
 					},
 					{
-						"item": {
-							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						item: {
+							tags: "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')",
 						},
-						"destroy_speed": 0.6
+						destroy_speed: 0.6,
 					},
 					{
-						"item": {
-							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						item: {
+							tags: "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')",
 						},
-						"destroy_speed": 0.5
+						destroy_speed: 0.5,
 					},
 					{
-						"item": {
-							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						item: {
+							tags: "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')",
 						},
-						"destroy_speed": 0.4
-					}
-				]
-			}
+						destroy_speed: 0.4,
+					},
+				],
+			},
 		},
-		"permutations": [
+		permutations: [
 			{
-				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
-				"components": {
-					"minecraft:transformation": { "rotation": [0, 0, 0] }
-				}
+				condition: "q.block_state('minecraft:cardinal_direction') == 'north'",
+				components: {
+					"minecraft:transformation": { rotation: [0, 0, 0] },
+				},
 			},
 			{
-				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
-				"components": {
-					"minecraft:transformation": { "rotation": [0, 180, 0] }
-				}
+				condition: "q.block_state('minecraft:cardinal_direction') == 'south'",
+				components: {
+					"minecraft:transformation": { rotation: [0, 180, 0] },
+				},
 			},
 			{
-				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
-				"components": {
-					"minecraft:transformation": { "rotation": [0, 90, 0] }
-				}
+				condition: "q.block_state('minecraft:cardinal_direction') == 'west'",
+				components: {
+					"minecraft:transformation": { rotation: [0, 90, 0] },
+				},
 			},
 			{
-				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
-				"components": {
-					"minecraft:transformation": { "rotation": [0, 270, 0] }
-				}
+				condition: "q.block_state('minecraft:cardinal_direction') == 'east'",
+				components: {
+					"minecraft:transformation": { rotation: [0, 270, 0] },
+				},
 			},
 			{
 				// The top part shouldn't drop any loot because when it's destroyed,
 				// the bottom part, which drops loot, is also destroyed.
-				"condition": "!q.block_state('lc:is_bottom_part')",
-				"components": {
-					"minecraft:loot": "loot_tables/empty.json"
-				}
+				condition: "!q.block_state('lc:is_bottom_part')",
+				components: {
+					"minecraft:loot": "loot_tables/empty.json",
+				},
 			},
 			{
 				// Fast constant ticking if:
 				// - It's the bottom part of the door.
 				// - Door action is CLOSE.
 				// - Door is NOT fully closed.
-				"condition": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:door_action') == 'close' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') > 0",
-				"components": {
+				condition: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:door_action') == 'close' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') > 0",
+				components: {
 					"minecraft:tick": {
-						"interval_range": [1, 1],
-						"looping": true
-					}
-				}
+						interval_range: [1, 1],
+						looping: true,
+					},
+				},
 			},
 			{
 				// Fast constant ticking if:
 				// - It's the bottom part of the door.
 				// - Door action is OPEN.
 				// - Door is NOT fully opened.
-				"condition": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:door_action') == 'open' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') < 6",
-				"components": {
+				condition: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:door_action') == 'open' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') < 6",
+				components: {
 					"minecraft:tick": {
-						"interval_range": [1, 1],
-						"looping": true
-					}
-				}
+						interval_range: [1, 1],
+						looping: true,
+					},
+				},
 			},
 			{
 				// Slower constant ticking if:
@@ -205,13 +205,13 @@
 				// - Redstone checking is enabled
 				// - Door action is CLOSE.
 				// - Door is fully closed.
-				"condition": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:check_redstone') && q.block_state('scpfe:door_action') == 'close' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') == 0",
-				"components": {
+				condition: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:check_redstone') && q.block_state('scpfe:door_action') == 'close' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') == 0",
+				components: {
 					"minecraft:tick": {
-						"interval_range": [2, 3],
-						"looping": true
-					}
-				}
+						interval_range: [2, 3],
+						looping: true,
+					},
+				},
 			},
 			{
 				// Slower constant ticking if:
@@ -219,251 +219,251 @@
 				// - Redstone checking is enabled
 				// - Door action is OPEN.
 				// - Door is fully opened.
-				"condition": "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:check_redstone') && q.block_state('scpfe:door_action') == 'close' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') == 6",
-				"components": {
+				condition: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:check_redstone') && q.block_state('scpfe:door_action') == 'close' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') == 6",
+				components: {
 					"minecraft:tick": {
-						"interval_range": [2, 3],
-						"looping": true
-					}
-				}
+						interval_range: [2, 3],
+						looping: true,
+					},
+				},
 			},
 			{
 				// Step 0
-				"condition": "q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 0",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 0",
+				components: {
 					"minecraft:light_dampening": 15,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [16, 16, 2]
+						origin: [-8, 0, -1],
+						size: [16, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [16, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [16, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 1
-				"condition": "q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 1",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 1",
+				components: {
 					"minecraft:light_dampening": 13,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [15, 16, 2]
+						origin: [-8, 0, -1],
+						size: [15, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [15, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [15, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 2
-				"condition": "q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 2",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 2",
+				components: {
 					"minecraft:light_dampening": 10,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [14, 16, 2]
+						origin: [-8, 0, -1],
+						size: [14, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [14, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [14, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 3
-				"condition": "q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 3",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 0 && q.block_state('scpfe:step_minor') == 3",
+				components: {
 					"minecraft:light_dampening": 6,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [13, 16, 2]
+						origin: [-8, 0, -1],
+						size: [13, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [13, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [13, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 4
-				"condition": "q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 0",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 0",
+				components: {
 					"minecraft:light_dampening": 3,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [12, 16, 2]
+						origin: [-8, 0, -1],
+						size: [12, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [12, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [12, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 5
-				"condition": "q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 1",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 1",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [11, 16, 2]
+						origin: [-8, 0, -1],
+						size: [11, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [11, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [11, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 6
-				"condition": "q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 2",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 2",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [10, 16, 2]
+						origin: [-8, 0, -1],
+						size: [10, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [10, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [10, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 7
-				"condition": "q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 3",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 1 && q.block_state('scpfe:step_minor') == 3",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [9, 16, 2]
+						origin: [-8, 0, -1],
+						size: [9, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [9, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [9, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 8
-				"condition": "q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 0",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 0",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [8, 16, 2]
+						origin: [-8, 0, -1],
+						size: [8, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [8, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [8, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 9
-				"condition": "q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 1",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 1",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [7, 16, 2]
+						origin: [-8, 0, -1],
+						size: [7, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [7, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [7, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 10
-				"condition": "q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 2",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 2",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [6, 16, 2]
+						origin: [-8, 0, -1],
+						size: [6, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [6, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [6, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 11
-				"condition": "q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 3",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 2 && q.block_state('scpfe:step_minor') == 3",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [5, 16, 2]
+						origin: [-8, 0, -1],
+						size: [5, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [5, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [5, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 12
-				"condition": "q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 0",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 0",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [4, 16, 2]
+						origin: [-8, 0, -1],
+						size: [4, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [4, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [4, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 13
-				"condition": "q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 1",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 1",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [3, 16, 2]
+						origin: [-8, 0, -1],
+						size: [3, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [3, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [3, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 14
-				"condition": "q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 2",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 2",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": {
-						"origin": [-8, 0, -1],
-						"size": [2, 16, 2]
+						origin: [-8, 0, -1],
+						size: [2, 16, 2],
 					},
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [2, 16, 2]
-					}
-				}
+						origin: [-8, 0, -1],
+						size: [2, 16, 2],
+					},
+				},
 			},
 			{
 				// Step 15
-				"condition": "q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 3",
-				"components": {
+				condition: "q.block_state('scpfe:step_major') == 3 && q.block_state('scpfe:step_minor') == 3",
+				components: {
 					"minecraft:light_dampening": 0,
 					"minecraft:collision_box": false,
 					"minecraft:selection_box": {
-						"origin": [-8, 0, -1],
-						"size": [1, 16, 2]
-					}
-				}
-			}
-		]
-	}
+						origin: [-8, 0, -1],
+						size: [1, 16, 2],
+					},
+				},
+			},
+		],
+	},
 }
