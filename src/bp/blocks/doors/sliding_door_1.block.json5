@@ -168,7 +168,7 @@
 			{
 				// The top part shouldn't drop any loot because when it's destroyed,
 				// the bottom part, which drops loot, is also destroyed.
-				condition: "!q.block_state('lc:is_bottom_part')",
+				condition: "!q.block_state('scpfe:is_bottom_part')",
 				components: {
 					"minecraft:loot": "loot_tables/empty.json",
 				},
@@ -176,22 +176,22 @@
 			{
 				// Fast constant ticking if:
 				// - It's the bottom part of the door.
-				// - Door action is CLOSE.
-				// - Door is NOT fully closed.
-				condition: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:door_action') == 'close' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') > 0",
-				components: {
-					"minecraft:tick": {
-						interval_range: [1, 1],
-						looping: true,
-					},
-				},
-			},
-			{
-				// Fast constant ticking if:
-				// - It's the bottom part of the door.
-				// - Door action is OPEN.
-				// - Door is NOT fully opened.
-				condition: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:door_action') == 'open' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') < 6",
+				// - Meets either of the following conditions:
+				//   - Door action is CLOSE and the door is NOT (fully) closed.
+				//   - Door action is OPEN and the door is NOT (fully) opened.
+				condition: "\
+q.block_state('scpfe:is_bottom_part') && \
+( \
+( \
+q.block_state('scpfe:door_action') == 'close' && \
+q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') > 0 \
+) \
+|| \
+( \
+q.block_state('scpfe:door_action') == 'open' \
+&& q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') < 6 \
+) \
+)",
 				components: {
 					"minecraft:tick": {
 						interval_range: [1, 1],
@@ -202,24 +202,23 @@
 			{
 				// Slower constant ticking if:
 				// - It's the bottom part of the door.
-				// - Redstone checking is enabled
-				// - Door action is CLOSE.
-				// - Door is fully closed.
-				condition: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:check_redstone') && q.block_state('scpfe:door_action') == 'close' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') == 0",
-				components: {
-					"minecraft:tick": {
-						interval_range: [2, 3],
-						looping: true,
-					},
-				},
-			},
-			{
-				// Slower constant ticking if:
-				// - It's the bottom part of the door.
-				// - Redstone checking is enabled
-				// - Door action is OPEN.
-				// - Door is fully opened.
-				condition: "q.block_state('scpfe:is_bottom_part') && q.block_state('scpfe:check_redstone') && q.block_state('scpfe:door_action') == 'close' && q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') == 6",
+				// - Redstone checking is enabled.
+				// - Meets either of the following conditions:
+				//   - Door action is CLOSE and the door is closed.
+				//   - Door action is OPEN and the door is opened.
+				condition: "\
+q.block_state('scpfe:is_bottom_part') && \
+( \
+( \
+q.block_state('scpfe:door_action') == 'close' && \
+q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') == 0 \
+) \
+|| \
+( \
+q.block_state('scpfe:door_action') == 'open' \
+&& q.block_state('scpfe:step_major') + q.block_state('scpfe:step_minor') == 6 \
+) \
+)",
 				components: {
 					"minecraft:tick": {
 						interval_range: [2, 3],
